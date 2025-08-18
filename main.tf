@@ -21,7 +21,6 @@ resource "tfe_workspace" "team-control-ws" {
   vcs_repo {    
     branch         = "main"
     identifier     = module.vcs_setup.vcs_path
-    oauth_token_id = var.vcs_oauth_token_id
   }
 }
 
