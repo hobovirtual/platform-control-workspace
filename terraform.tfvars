@@ -1,1 +1,1 @@
-TEAM_WS_NAME = "team-a"
+TEAM_WS_NAME = "team-b"
