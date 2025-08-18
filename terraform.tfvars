@@ -1,0 +1,1 @@
+TEAM_WS_NAME = "team-a"

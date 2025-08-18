@@ -1,12 +1,6 @@
-resource "github_repository" "example" {
+resource "github_repository" "team_repo" {
   name        = "example"
   description = "My awesome codebase"
-
+  auto_init = true
   visibility = "public"
-
-  template {
-    owner                = "github"
-    repository           = "terraform-template-module"
-    include_all_branches = true
-  }
 }
