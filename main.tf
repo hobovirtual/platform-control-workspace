@@ -29,8 +29,21 @@ resource "tfe_workspace" "team-ws" {
 # ***************************************
 # TF Modules declaration
 
+# ---------------------------------------
+# extract all teams names in a local var
+
+locals {
+  ALL_REPO_NAMES = [for obj in var.TEAMS : obj.REPO_NAME]
+  ALL_REPO_DESCRIPTIONS = [for obj in var.TEAMS : obj.DESCRIPTION]
+}
+
+# ***************************************
+# TF Modules - git repo creation
+
 module "vcs_setup" {
   source = "./modules/github-repo-setup"
+  REPO_NAMES = var.ALL_REPO_NAMES
+  REPO_DESCRIPTIONS = var.ALL_REPO_DESCRIPTIONS
   GH_APP_ID = var.GH_APP_ID
   GH_APP_INSTALLATION_ID = var.GH_APP_INSTALLATION_ID
   GH_ORGANIZATION = var.GH_ORGANIZATION
