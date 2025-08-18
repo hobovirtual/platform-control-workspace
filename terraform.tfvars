@@ -9,4 +9,10 @@ TEAMS = [{
   NAME = "team-b"
   REPO_NAME = "team-b"
   WS_NAME = "team-b"
+},
+{
+  DESCRIPTION = "TEAM C - third is not last"
+  NAME = "team-c"
+  REPO_NAME = "team-c"
+  WS_NAME = "team-c"
 }]
