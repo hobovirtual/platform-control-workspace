@@ -22,7 +22,6 @@ resource "tfe_workspace" "team-control-ws" {
     branch = "main"
     identifier = module.vcs_setup.vcs_path
     oauth_token_id = var.VCS_OAUTH_TOKEN_ID
-    github_app_installation_id = var.GH_APP_INSTALLATION_ID
   }
 }
 
