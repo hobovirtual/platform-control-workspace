@@ -20,7 +20,7 @@ resource "tfe_workspace" "team-control-ws" {
   auto_apply   = true
   vcs_repo {    
     branch         = "main"
-    identifier     = module.vcs_setups.vcs_path
+    identifier     = module.vcs_setup.vcs_path
     oauth_token_id = var.vcs_oauth_token_id
   }
 }
