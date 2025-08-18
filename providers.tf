@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "tfe" {
-  # Configuration options
+  token = var.TFE_TOKEN
 }

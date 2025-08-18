@@ -3,7 +3,7 @@
 # ======================================
 
 # --------------------------------------
-# HCP TF declaration
+# HCP TF - select project
 
 data "tfe_project" "project" {
   name         = var.TFE_PROJECT
@@ -11,7 +11,7 @@ data "tfe_project" "project" {
 }
 
 # --------------------------------------
-# HCP TF declaration
+# HCP TF - create workspace
 
 resource "tfe_workspace" "team-control-ws" {
   name         = var.TEAM_WS_NAME
