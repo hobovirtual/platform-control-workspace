@@ -23,10 +23,3 @@ resource "tfe_workspace" "team-control-ws" {
     identifier     = module.git_repo_setup.vcs_team_path
   }
 }
-
-# --------------------------------------
-# module creating git repo
-
-module "git_repo_setup" {
-  source = "./modules/github-repo-setup"
-}
