@@ -30,6 +30,7 @@ resource "tfe_workspace" "team-control-ws" {
 
 module "vcs_setup" {
   source = "./modules/github-repo-setup"
+  GH_APP_ID = var.GH_APP_ID
+  GH_APP_INSTALLATION_ID = var.GH_APP_INSTALLATION_ID
   GH_ORGANIZATION = var.GH_ORGANIZATION
-  GITHUB_TOKEN = var.GITHUB_TOKEN
 }

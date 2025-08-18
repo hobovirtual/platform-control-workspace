@@ -1,8 +1,4 @@
 # team defined varaibles
-variable "GH_ORGANIZATION" {
-  type = string  
-}
-
-variable "GITHUB_TOKEN" {
-  type = string
-}
+variable "GH_APP_ID" {}
+variable "GH_APP_INSTALLATION_ID" {}
+variable "GH_ORGANIZATION" {}
