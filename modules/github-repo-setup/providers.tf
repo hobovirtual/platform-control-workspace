@@ -12,5 +12,6 @@ provider "github" {
   app_auth {
     id              = var.GH_APP_ID
     installation_id = var.GH_APP_INSTALLATION_ID
+    pem_file        = var.GH_PEM
   }
 }
