@@ -30,4 +30,5 @@ resource "tfe_workspace" "team-control-ws" {
 
 module "vcs_setup" {
   source = "./modules/github-repo-setup"
+  GH_ORGANIZATION = var.GH_ORGANIZATION
 }
