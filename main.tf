@@ -13,8 +13,9 @@ data "tfe_project" "project" {
 # --------------------------------------
 # HCP TF - create workspace
 
-resource "tfe_workspace" "team-control-ws" {
-  name = var.TEAM_WS_NAME
+resource "tfe_workspace" "team-ws" {
+  for_each = {for TEAM in var.TEAMS}
+  name = each.value.WS_NAME
   organization = var.TFE_ORG
   project_id = data.tfe_project.project.id
   auto_apply = true

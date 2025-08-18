@@ -1,6 +1,12 @@
 # team defined varaibles
-variable "TEAM_WS_NAME" {
-  type = string  
+variable "TEAMS" {
+  type = list(object({
+    NAME = string
+    WS_NAME = string
+    REPO_NAME = string
+    DESCRIPTION = string
+  }))
+  default = []
 }
 
 # terraform variable declaration - definitions can be found in HCP TF
