@@ -9,9 +9,6 @@ variable "TEAMS" {
   default = []
 }
 
-variable "ALL_REPO_NAMES" {}
-variable "ALL_REPO_DESCRIPTIONS" {}
-
 # terraform variable declaration - definitions can be found in HCP TF
 variable "GH_APP_ID" {}
 variable "GH_APP_INSTALLATION_ID" {}
