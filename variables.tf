@@ -11,3 +11,4 @@ variable "GH_PEM" {}
 variable "TFE_ORG" {}
 variable "TFE_PROJECT" {}
 variable "TFE_TOKEN" {}
+variable "VCS_OAUTH_TOKEN_ID" {}
