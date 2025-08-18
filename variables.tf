@@ -9,3 +9,4 @@ variable "GH_APP_INSTALLATION_ID" {}
 variable "GH_ORGANIZATION" {}
 variable "TFE_ORG" {}
 variable "TFE_PROJECT" {}
+variable "TFE_TOKEN" {}
