@@ -14,14 +14,15 @@ data "tfe_project" "project" {
 # HCP TF - create workspace
 
 resource "tfe_workspace" "team-ws" {
+  count = length(var.TEAMS)
   for_each = {for TEAM in var.TEAMS : TEAM.NAME => TEAM}
   name = each.value.WS_NAME
   organization = var.TFE_ORG
   project_id = data.tfe_project.project.id
   auto_apply = true
   vcs_repo {    
-    branch = "main"
-    identifier = module.vcs_setup.vcs_path
+    branch = "main"    
+    identifier = module.vcs_setup
     oauth_token_id = var.VCS_OAUTH_TOKEN_ID
   }
 }
@@ -33,7 +34,9 @@ resource "tfe_workspace" "team-ws" {
 
 module "vcs_setup" {
   source = "./modules/github-repo-setup"
-  TEAMS = var.TEAMS
+  REPO_NAME = var.TEAMS[count].REPO_NAME
+  REPO_DESCRIPTION = var.TEAMS[count].REPO_DESCRIPTION
+  #TEAMS = var.TEAMS
   GH_APP_ID = var.GH_APP_ID
   GH_APP_INSTALLATION_ID = var.GH_APP_INSTALLATION_ID
   GH_ORGANIZATION = var.GH_ORGANIZATION
