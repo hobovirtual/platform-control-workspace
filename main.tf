@@ -14,13 +14,14 @@ data "tfe_project" "project" {
 # HCP TF - create workspace
 
 resource "tfe_workspace" "team-control-ws" {
-  name         = var.TEAM_WS_NAME
+  name = var.TEAM_WS_NAME
   organization = var.TFE_ORG
-  project_id   = data.tfe_project.project.id
-  auto_apply   = true
+  project_id = data.tfe_project.project.id
+  auto_apply = true
   vcs_repo {    
-    branch         = "main"
-    identifier     = module.vcs_setup.vcs_path
+    branch = "main"
+    identifier = module.vcs_setup.vcs_path
+    github_app_installation_id = var.GH_APP_INSTALLATION_ID
   }
 }
 
