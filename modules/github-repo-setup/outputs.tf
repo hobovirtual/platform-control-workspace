@@ -1,3 +1,3 @@
 output "vcs_path" {
-  value = [github_repository.team_repo.full_name]
+  value = values(github_repository.team_repo.map)[*].full_name
 }
