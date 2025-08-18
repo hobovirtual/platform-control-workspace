@@ -8,9 +8,9 @@ terraform {
 }
 
 provider "github" {
-  owner = var.GITHUB_ORGANIZATION
+  owner = var.GH_ORGANIZATION
   app_auth {
-    id              = var.GITHUB_APP_ID
-    installation_id = var.GITHUB_APP_INSTALLATION_ID
+    id              = var.GH_APP_ID
+    installation_id = var.GH_APP_INSTALLATION_ID
   }
 }
