@@ -16,10 +16,6 @@ data "tfe_project" "project" {
 resource "tfe_workspace" "team-control-ws" {
   name         = var.TEAM_WS_NAME
   organization = var.TFE_ORG
-  project_id   = data.tfe_project.platform.id
+  project_id   = data.tfe_project.project.id
   auto_apply   = true
-  vcs_repo {
-    branch         = "main"
-    identifier     = module.git_repo_setup.vcs_team_path
-  }
 }
