@@ -23,7 +23,7 @@ resource "tfe_workspace" "team-ws" {
   auto_apply = true
   vcs_repo {    
     branch = "main"    
-    identifier = module.vcs_setup.vcs_fullpath
+    identifier = module.vcs_setup.vcs_fullpath[count.index]
     oauth_token_id = var.VCS_OAUTH_TOKEN_ID
   }
 }
@@ -33,16 +33,9 @@ resource "tfe_workspace" "team-ws" {
 # ***************************************
 # TF Modules - git repo creation
 
-locals {
-  REPO_NAME = lookup(var.TEAMS[count.index], "REPO_NAME")
-  REPO_DESCRIPTION = lookup(var.TEAMS[count.index], "DESCRIPTION")
-}
-
 module "vcs_setup" {
   source = "./modules/github-repo-setup"
-  REPO_NAME = local.REPO_NAME
-  REPO_DESCRIPTION = local.REPO_DESCRIPTION
-  #TEAMS = var.TEAMS
+  TEAMS = var.TEAMS
   GH_APP_ID = var.GH_APP_ID
   GH_APP_INSTALLATION_ID = var.GH_APP_INSTALLATION_ID
   GH_ORGANIZATION = var.GH_ORGANIZATION
