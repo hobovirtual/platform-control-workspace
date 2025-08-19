@@ -10,8 +10,8 @@ resource "github_repository" "team_repo" {
   #count = length(local.ALL_REPO_NAMES)
   #name = local.ALL_REPO_NAMES[count.index]
   #description = local.ALL_REPO_DESCRIPTIONS[count.index]
-  name = REPO_NAME
-  description = REPO_DESCRIPTION
+  name = var.REPO_NAME
+  description = var.REPO_DESCRIPTION
   auto_init = true
   visibility = "public"
 }
