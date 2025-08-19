@@ -15,4 +15,10 @@ TEAMS = [{
   NAME = "team-c"
   REPO_NAME = "team-c"
   WS_NAME = "team-c"
+},
+{
+  DESCRIPTION = "TEAM D - lucky four"
+  NAME = "team-d"
+  REPO_NAME = "team-d"
+  WS_NAME = "team-d"
 }]
