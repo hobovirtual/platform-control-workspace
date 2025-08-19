@@ -36,7 +36,7 @@ resource "tfe_workspace" "team-ws" {
 module "vcs_setup" {
   source = "./modules/github-repo-setup"
   REPO_NAME = lookup(var.TEAMS[count.index], "REPO_NAME")
-  REPO_DESCRIPTION = lookup(var.TEAMS[count.index], "REPO_DESCRIPTION")
+  REPO_DESCRIPTION = lookup(var.TEAMS[count.index], "DESCRIPTION")
   #TEAMS = var.TEAMS
   GH_APP_ID = var.GH_APP_ID
   GH_APP_INSTALLATION_ID = var.GH_APP_INSTALLATION_ID
