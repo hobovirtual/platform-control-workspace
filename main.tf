@@ -7,6 +7,6 @@
 
 data "tfe_project" "project" {
   count = length(var.TEAMS)
-  name = lookup(var.TEAMS[count.index], "WS_NAME")
+  name = lookup(var.TEAMS[count.index], "NAME")
   organization = var.TFE_ORG
 }
