@@ -23,7 +23,7 @@ resource "tfe_workspace" "team-ws" {
   auto_apply = true
   vcs_repo {    
     branch = "main"    
-    identifier = module.vcs_setup
+    identifier = module.vcs_setup.vcs_fullpath
     oauth_token_id = var.VCS_OAUTH_TOKEN_ID
   }
 }
