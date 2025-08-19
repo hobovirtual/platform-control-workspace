@@ -11,12 +11,6 @@ TEAMS = [{
   WS_NAME = "team-b"
 },
 {
-  DESCRIPTION = "TEAM C - third is not last"
-  NAME = "team-c"
-  REPO_NAME = "team-c"
-  WS_NAME = "team-c"
-},
-{
   DESCRIPTION = "TEAM D - lucky four"
   NAME = "team-d"
   REPO_NAME = "team-d"
