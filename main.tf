@@ -33,10 +33,15 @@ resource "tfe_workspace" "team-ws" {
 # ***************************************
 # TF Modules - git repo creation
 
-module "vcs_setup" {
-  source = "./modules/github-repo-setup"
+locals {
   REPO_NAME = lookup(var.TEAMS[count.index], "REPO_NAME")
   REPO_DESCRIPTION = lookup(var.TEAMS[count.index], "DESCRIPTION")
+}
+
+module "vcs_setup" {
+  source = "./modules/github-repo-setup"
+  REPO_NAME = local.REPO_NAME
+  REPO_DESCRIPTION = local.REPO_DESCRIPTION
   #TEAMS = var.TEAMS
   GH_APP_ID = var.GH_APP_ID
   GH_APP_INSTALLATION_ID = var.GH_APP_INSTALLATION_ID
